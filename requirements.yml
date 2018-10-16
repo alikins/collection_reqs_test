@@ -7,7 +7,7 @@
 - src: geerlingguy.apache
   version: 2.1.1
 
-- name: geerlingguy.ntp
+- src: geerlingguy.ntp
   version: 1.5.0
 
 # from GitHub
