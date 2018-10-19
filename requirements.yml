@@ -1,8 +1,6 @@
 # from galaxy
 - src: yatesr.timezone
 
-- src: alikins.ansible_testing_content
-  name: does_name_even_matter
 
 - src: geerlingguy.apache
   version: 2.1.1
@@ -10,12 +8,17 @@
 - src: geerlingguy.ntp
   version: 1.5.0
 
+# don't work to some degree
+# attempts to find/fetch alikins.does_name_even_matter which doesnt exist
+# - src: alikins.ansible_testing_content
+# name: does_name_even_matter
+
 # from GitHub
 # FIXME: mazer doesn't get a useful namespace out of this req spec
 # - src: https://github.com/bennojoy/nginx
 
 # from GitHub, overriding the name and specifying a specific tag
-#- src: https://github.com/bennojoy/nginx
+# - src: https://github.com/bennojoy/nginx
 #  version: master
 #  name: nginx_role
 
