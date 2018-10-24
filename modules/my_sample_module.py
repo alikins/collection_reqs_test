@@ -63,6 +63,7 @@ message:
 
 from ansible.module_utils.basic import AnsibleModule
 
+
 def run_module():
     # define the available arguments/parameters that a user can pass to
     # the module
@@ -117,8 +118,10 @@ def run_module():
     # simple AnsibleModule.exit_json(), passing the key/value results
     module.exit_json(**result)
 
+
 def main():
     run_module()
+
 
 if __name__ == '__main__':
     main()
