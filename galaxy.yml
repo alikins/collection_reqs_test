@@ -1,4 +1,5 @@
-name: "alikins.collection_reqs_test"
+namespace: "alikins"
+name: "collection_reqs_test"
 version: "2.1111.3"
 description: "a collection with requirements.yml"
 authors: ["Adrian Likins"]
