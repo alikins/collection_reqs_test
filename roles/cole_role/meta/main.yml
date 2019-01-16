@@ -9,5 +9,7 @@ galaxy_info:
   galaxy_tags:
     - cole
     - things_that_rhyme_with_role
+    - rhymewithrole
+  platforms: []
 
 dependencies: []
