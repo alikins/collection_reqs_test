@@ -14,7 +14,7 @@ ANSIBLE_METADATA = {
 
 
 def air_quote(text):
-    aq = ["✌️", text, "✌️"]
+    aq = ['"', text, '"']
     return ''.join(aq)
 
 
