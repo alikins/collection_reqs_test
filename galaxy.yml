@@ -1,6 +1,6 @@
 namespace: "alikins"
 name: "collection_reqs_test"
-version: "2.1111.10"
+version: "2.1111.11"
 description: "a collection with requirements.yml"
 authors: ["Adrian Likins"]
 license: "GPL-3.0-or-later"
