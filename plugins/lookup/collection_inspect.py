@@ -19,7 +19,7 @@ EXAMPLES = """
 """
 
 RETURN = """
-  _list:
+  _raw:
     description:
       - values about the plugin and it's collection.
     type: list
@@ -37,5 +37,6 @@ class LookupModule(LookupBase):
         ret = []
         dunders = get_dunders(globals())
         for key in dunders:
-            ret.append("%s=%s" % (key, dunders[key]))
+            # ret.append("%s=%s" % (key, dunders[key]))
+            ret.append((key, repr(dunders[key])))
         return ret

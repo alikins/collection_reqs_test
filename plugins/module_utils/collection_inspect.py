@@ -12,7 +12,7 @@ def get_dunders(_globals, force_serializable=False):
     '''
 
     dunder_candidates = ('__cached__', '__file__', '__loader__',
-                         '__name__', '__package__', '__spec__')
+                         '__name__', '__package__', '__path__', '__spec__')
 
     not_defined_blurb = '_IS_NOT_DEFINED'
 

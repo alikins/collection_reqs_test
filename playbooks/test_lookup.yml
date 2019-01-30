@@ -1,0 +1,21 @@
+---
+- name: The first play
+  hosts: local_test
+  gather_facts: false
+
+  vars:
+    lookup_loader_info: "{{ lookup('collection_inspect', 'dummy') }}"
+  tasks:
+    - name: show lookup loader info data
+      debug:
+        var: lookup_loader_info
+
+- name: a become play
+  hosts: local_test
+  tags:
+    - a_become_play_tag
+  gather_facts: false
+  become_method: sudo
+  tasks:
+    - debug:
+        msg: "{{ lookup('collection_inspect', 'dummy')}}"

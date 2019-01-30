@@ -15,13 +15,24 @@ ANSIBLE_METADATA = {
 
 
 def collection_inspect(text):
-    dunders = get_dunders(globals())
+    # import pdb; pdb.set_trace()
 
-    aq = [text,
-          "#( __file__=%s" % dunders['__file__'],
-          "__path__=%s" % dunders['__path__'],
-          "__name__=%s" % dunders['__name__']]
-    return ''.join(aq)
+    try:
+        dunders = get_dunders(globals())
+    except Exception as e:
+        print(e)
+        raise
+
+    try:
+        aq = [text,
+              "#( __file__=%s" % dunders['__file__'],
+              "__path__=%s" % dunders['__path__'],
+              "__name__=%s" % dunders['__name__'],
+              ")"]
+    except Exception as e:
+        print(e)
+        raise
+    return ', '.join(aq)
 
 
 # ---- Ansible filters ----

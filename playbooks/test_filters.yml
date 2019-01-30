@@ -1,0 +1,40 @@
+---
+- name: The first play
+  hosts: local_test
+  gather_facts: false
+
+  vars:
+    dummy: "dummy"
+    loader_info: "{{ dummy|collection_inspect() }}"
+  tasks:
+    - debug:
+        var: loader_info
+
+- name: a become play
+  hosts: local_test
+  tags:
+    - a_become_play_tag
+  gather_facts: false
+  become_method: sudo
+  vars:
+    dummy: "dummy"
+    loader_info2: "{{ dummy|collection_inspect() }}"
+  tasks:
+    - debug:
+        var: loader_info2
+
+- name: the second second play
+  hosts: local_test
+  tags:
+    - the_second_second_play_tag
+  gather_facts: false
+  vars:
+    dummy: "dummy"
+  tasks:
+    - name: set a fact with another filter invocation
+      set_fact:
+        more_loader_info: "{{ dummy|collection_inspect() }}"
+
+    - name: show the second filter results
+      debug:
+        var: more_loader_info
