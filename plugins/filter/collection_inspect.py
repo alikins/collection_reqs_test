@@ -13,8 +13,28 @@ ANSIBLE_METADATA = {
 }
 
 
+def get_dunders(_globals):
+    dunder_candidates = ('__cached__', '__file__', '__loader__',
+                         '__name__', '__package__', '__spec__')
+    # _globals = globals()
+
+    not_defined_blurb = '_IS_NOT_DEFINED'
+
+    data = {}
+    for candidate in dunder_candidates:
+        data[candidate] = _globals.get(candidate,
+                                       "%s%s" % (candidate.upper(), not_defined_blurb))
+
+    return data
+
+
 def collection_inspect(text):
-    aq = [text, "# __file__: %s" % (__file__)]
+    dunders = get_dunders(globals())
+
+    aq = [text,
+          "#( __file__=%s" % dunders['__file__'],
+          "__path__=%s" % dunders['__path__'],
+          "__name__=%s" % dunders['__name__']]
     return ''.join(aq)
 
 
