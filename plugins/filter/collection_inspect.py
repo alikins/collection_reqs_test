@@ -5,27 +5,13 @@
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 
+from ansible.module_utils.collection_inspect import get_dunders
 
 ANSIBLE_METADATA = {
     'metadata_version': '1.1',
     'status': ['preview'],
     'supported_by': 'community'
 }
-
-
-def get_dunders(_globals):
-    dunder_candidates = ('__cached__', '__file__', '__loader__',
-                         '__name__', '__package__', '__spec__')
-    # _globals = globals()
-
-    not_defined_blurb = '_IS_NOT_DEFINED'
-
-    data = {}
-    for candidate in dunder_candidates:
-        data[candidate] = _globals.get(candidate,
-                                       "%s%s" % (candidate.upper(), not_defined_blurb))
-
-    return data
 
 
 def collection_inspect(text):

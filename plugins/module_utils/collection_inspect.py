@@ -1,14 +1,18 @@
 
 def get_dunders(_globals, force_serializable=False):
-    '''Pass in a the dict returned from globals() from caller
+    '''Pass in the dict returned from globals() from caller
 
     ie, call like:
 
         dunders = get_dunders(globals())
+
+    Plugin types that runs in a worker or otherwise need to serialize
+    the results to JSON should use force_serializable=True. For
+    example, a module needs to use force_serializable=True.
     '''
+
     dunder_candidates = ('__cached__', '__file__', '__loader__',
                          '__name__', '__package__', '__spec__')
-    # _globals = globals()
 
     not_defined_blurb = '_IS_NOT_DEFINED'
 
