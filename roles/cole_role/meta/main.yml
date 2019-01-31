@@ -8,8 +8,15 @@ galaxy_info:
 
   galaxy_tags:
     - cole
-    - things_that_rhyme_with_role
+    - droll
     - rhymewithrole
-  platforms: []
+
+  platforms:
+    - name: Fedora
+      versions:
+        - all
+    - name: EL
+      versions:
+        - all
 
 dependencies: []
