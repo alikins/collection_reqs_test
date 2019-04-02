@@ -3,7 +3,8 @@ name: "collection_reqs_test"
 version: "2.1113.33"
 description: "a collection with some deps on other collections"
 authors: ["Adrian Likins"]
-license: "GPL-3.0-or-later"
+license:
+  - "GPL-3.0-or-later"
 readme: "README.md"
 tags:
   - collectiontest
