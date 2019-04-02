@@ -9,7 +9,6 @@ readme: "README.md"
 tags:
   - collectiontest
 dependencies:
-  geerlingguy.gitlab: '*'
   alikins.collection_ntp: '>=1.6.0'
   alikins.collection_inspect: '*'
   alikins.top_geerlingguy: '*'
