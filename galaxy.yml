@@ -1,6 +1,6 @@
 namespace: "alikins"
 name: "collection_reqs_test"
-version: "2.1113.33"
+version: "2.1113.34"
 description: "a collection with some deps on other collections"
 authors: ["Adrian Likins"]
 license:
@@ -10,6 +10,6 @@ tags:
   - collectiontest
 dependencies:
   geerlingguy.gitlab: '*'
-  alikins.collection_ntp: '>=1.6.0'
+  alikins.collection_ntp: '*'
   alikins.collection_inspect: '*'
   alikins.top_geerlingguy: '*'
