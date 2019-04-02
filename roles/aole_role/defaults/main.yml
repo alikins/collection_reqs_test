@@ -1,2 +1,3 @@
 ---
 # defaults file for aole_role
+aole_role_blippy: "default-baz"

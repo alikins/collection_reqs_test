@@ -1,2 +1,4 @@
 ---
 # vars file for bole_role
+bole_role_loaded: true
+bole_role_blippy: "B O L E blippy"

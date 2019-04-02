@@ -1,3 +1,8 @@
+collections:
+  - ansible.builtin
+  - testns.coll_in_sys
+  - bogus.fromrolemeta
+
 galaxy_info:
   author: Adrian Likins
   description: Aole Role

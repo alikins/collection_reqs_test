@@ -1,2 +1,5 @@
 ---
-# tasks file for aole_role
+- name: show some of the results of the role aole_role
+  debug:
+    msg: "somevar {{ aole_role_blippy }} postvar"
+  register: aole_debug_out

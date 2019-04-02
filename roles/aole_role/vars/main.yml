@@ -1,2 +1,3 @@
 ---
-# vars file for aole_role
+aole_role_loaded: true
+aole_role_blippy: "foo"
