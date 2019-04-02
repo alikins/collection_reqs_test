@@ -1,0 +1,42 @@
+---
+- name: Test some collection stuff
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Test my_sample_module loaded from alikins.collection_reqs_test collection
+      alikins.collection_reqs_test.my_sample_module:
+        name: "This is the test message for my_sample_module"
+        new: true
+
+
+- name: test some role stuff play
+  hosts: localhost
+  gather_facts: false
+  collections:
+    - ansible.builtin
+  roles:
+    - role: alikins.collection_reqs_test.aole_role
+  tasks:
+    - name: import the bole_role
+      import_role:
+        name: alikins.collection_reqs_test.bole_role
+
+    - name: show some of the results of the role aole_role (pre include_role)
+      debug:
+        var: aole_debug_out
+
+    - name: include the aole_role
+      include_role:
+        name: alikins.collection_reqs_test.aole_role
+        public: yes
+
+    - name: show some of the results of the role aole_role 2 (post include_role)
+      debug:
+        var: aole_debug_out
+
+    - name: show some of the results of the role bole_role
+      debug:
+        var: bole_role_blippy
+
+    - debug:
+        msg: "{{ vars | to_nice_json }}"
