@@ -11,4 +11,3 @@ tags:
 dependencies:
   alikins.collection_ntp: '>=0.1.6'
   alikins.collection_inspect: '*'
-  alikins.top_geerlingguy: '*'
