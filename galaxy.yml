@@ -1,6 +1,6 @@
 namespace: "alikins"
 name: "collection_reqs_test"
-version: "2.1113.44"
+version: "2.1113.45"
 description: "a collection with some deps on other collections"
 authors: ["Adrian Likins"]
 license:
