@@ -2,12 +2,29 @@
 - name: Test some collection stuff
   hosts: localhost
   gather_facts: false
+  vars:
+    foo: "This is a test of removing vowels. Sour Lye"
+    blip: "{{ foo | alikins.collection_reqs_test.vague_name.disemvowel }}"
+    baz: "{{ foo | alikins.collection_reqs_test.vague_name.overvowel }}"
   tasks:
+    - name: show filtered vars
+      debug:
+        msg: "blip: {{ blip }}  baz: {{ baz }}"
+
     - name: Test my_sample_module loaded from alikins.collection_reqs_test collection
       alikins.collection_reqs_test.my_sample_module:
         name: "This is the test message for my_sample_module"
         new: true
 
+        #    - name: See if the ActionInaction action plugin does anything
+        #      alikins.collections_reqs_test.inaction:
+        #      register: inaction_result
+
+    # - debug:
+    #     var: inaction_result
+
+    # - assert:
+    #     that: inaction_result
 
 - name: test some role stuff play
   hosts: localhost
